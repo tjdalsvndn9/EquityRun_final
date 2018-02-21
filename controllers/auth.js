@@ -1,10 +1,10 @@
 const User = require('../models/user');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const {saveToMailChimp} = require('../util/mailchimp');
 
 const signUp = async (req,res,next) => {
   try{
     const {email,password} = req.body;
-    console.log(email);
     const newUser = new User({
       localLogin:{
         email,
@@ -12,7 +12,8 @@ const signUp = async (req,res,next) => {
       }
     });
     await newUser.save();
-    res.send({loggedIn:true})
+    await res.send({loggedIn:true})
+    saveToMailChimp(email,next);
   }
   catch(err){
     next(err)

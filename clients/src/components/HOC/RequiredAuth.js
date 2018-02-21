@@ -8,8 +8,11 @@ export default (ComposedComponent) => {
     class REQUIREDAUTH extends Component {
       async componentDidMount() {
         await this.props.authenticate();
-        if(this.props.auth.facebookId === ''){
-          this.props.navigation('/')
+        const {facebookId, localLogin:{email,password}} = this.props.auth;
+        if(facebookId === ''){
+          if(email === undefined && password === undefined){
+            this.props.navigation('/')
+          }
         }
       }
 

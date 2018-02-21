@@ -9,7 +9,7 @@
   padding: 100px 50px 40px 50px;
   background: #F2F2F2; }
 
-.FLEX-CENTER, .SETTING {
+.FLEX-CENTER {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -17,6 +17,12 @@
 .FLEX-ROW-CENTER {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: row; }
+
+.FLEX-ROW-START, .SETTING {
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row; }
 
@@ -60,7 +66,7 @@
   color: #222529; }
 
 .SETTING {
-  height: 100%; }
+  height: 100vh; }
   .SETTING > div {
     width: 100%; }
     .SETTING > div .SETTING-RIGHT {

@@ -3,8 +3,8 @@
 
 .SETTING{
   @extend .DEFAULT-PAGE-POSITION;
-  @extend .FLEX-CENTER;
-  height:100%;
+  @extend .FLEX-ROW-START;
+  height:100vh;
   & > div{
    @extend .FLEX-ROW-START-SPACE-AROUND;
    width:100%;

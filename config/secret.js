@@ -12,6 +12,9 @@ const FACEBOOK_CALLBACK_URL = `http://localhost:3000/auth/facebook/callback`
 //local
 const SALT = 10;
 
+//MailChimp
+const MAIL_CHIMP_API_KEY = '71ea9541ef73552867fb5a03ca3f1669-us17';
+
 
 
 module.exports = {
@@ -21,5 +24,6 @@ module.exports = {
   FACEBOOK_CLIENT_SECRET,
   FACEBOOK_CALLBACK_URL,
   SECRET_KEY,
-  SALT
+  SALT,
+  MAIL_CHIMP_API_KEY
 }

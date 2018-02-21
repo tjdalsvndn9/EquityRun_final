@@ -57,6 +57,13 @@ $phone-screen:575px;
   flex-direction: row;
 }
 
+.FLEX-ROW-START{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+}
+
 
 .FLEX-COLUMN-CENTER{
   display:flex;
