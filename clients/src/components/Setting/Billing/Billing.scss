@@ -1,0 +1,22 @@
+@import '../../Css/index.scss';
+
+
+.SETTING{
+  @extend .DEFAULT-PAGE-POSITION;
+  @extend .FLEX-CENTER;
+  height:100%;
+  & > div{
+   @extend .FLEX-ROW-START-SPACE-AROUND;
+   width:100%;
+   .SETTING-RIGHT{
+     flex-grow: 2;
+     padding: 0 50px;
+     @extend .FLEX-COLUMN-START;
+     height:100%;
+     & > .SETTING-TITLE {
+       font-size:$sub-title;
+       @extend .sub-title-padidng
+     }
+   }
+  }
+}

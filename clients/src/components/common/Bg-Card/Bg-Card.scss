@@ -1,0 +1,13 @@
+@import '../../Css/index.scss';
+
+.BGCARD{
+  width:100%;
+  .ui.card{
+    width:100%;
+    .description{
+      padding:1.3rem 0;
+      @extend .FLEX-CENTER;
+      min-height:300px;
+    }
+  }
+}

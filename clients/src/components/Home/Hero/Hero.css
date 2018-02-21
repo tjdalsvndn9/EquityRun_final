@@ -1,0 +1,23 @@
+.HERO {
+  background: url("../../../assets/hero.jpeg");
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .HERO h2 {
+    font-size: 40px; }
+    @media (max-width: 768px) {
+      .HERO h2 {
+        font-size: 25px;
+        text-align: center; } }
+  .HERO .Flex-Column {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row; }

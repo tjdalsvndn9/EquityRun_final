@@ -1,0 +1,19 @@
+$blue:#5193DD;
+
+.AD{
+  min-height:200px;
+  height:300px;
+  background:$blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title{
+    color:white;
+  }
+  .ui.button{
+    color:white;
+    background:none;
+    border:1px solid white;
+  }
+}

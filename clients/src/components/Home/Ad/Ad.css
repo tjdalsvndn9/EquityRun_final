@@ -1,0 +1,14 @@
+.AD {
+  min-height: 200px;
+  height: 300px;
+  background: #5193DD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .AD .title {
+    color: white; }
+  .AD .ui.button {
+    color: white;
+    background: none;
+    border: 1px solid white; }

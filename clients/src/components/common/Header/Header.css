@@ -1,0 +1,15 @@
+.HEADER {
+  position: fixed;
+  width: 100%;
+  z-index: 100; }
+  .HEADER .navbar {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.22); }
+    .HEADER .navbar img {
+      width: 120px; }
+    @media (min-width: 769px) {
+      .HEADER .navbar {
+        height: 4.5rem; } }
+    @media (max-width: 768px) {
+      .HEADER .navbar img {
+        width: 100px; } }

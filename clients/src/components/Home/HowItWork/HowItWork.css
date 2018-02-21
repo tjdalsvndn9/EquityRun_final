@@ -1,0 +1,28 @@
+.HOWITWORK {
+  text-align: center;
+  padding: 40px;
+  background-color: #F9F9F9; }
+  .HOWITWORK .FLEX-ROW {
+    flex-wrap: nowrap; }
+    @media (max-width: 1080px) {
+      .HOWITWORK .FLEX-ROW {
+        flex-wrap: wrap; } }
+  .HOWITWORK .HOME-IMG {
+    border: none;
+    padding: 0;
+    width: 100%;
+    justify-content: space-around; }
+    @media (max-width: 1080px) {
+      .HOWITWORK .HOME-IMG {
+        padding: 40px; } }
+    .HOWITWORK .HOME-IMG img {
+      width: 120px; }
+    .HOWITWORK .HOME-IMG h4 {
+      padding: 1rem 0; }
+    .HOWITWORK .HOME-IMG p {
+      width: 200px;
+      margin: 0 auto; }
+      @media (max-width: 1080px) {
+        .HOWITWORK .HOME-IMG p {
+          width: 60%;
+          min-width: 200px; } }

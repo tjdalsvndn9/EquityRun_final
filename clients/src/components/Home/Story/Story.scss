@@ -1,0 +1,49 @@
+.STORY{
+  .slick-prev:before, .slick-next:before{
+    color:#5193DD;
+  }
+  .title{
+    padding-bottom:2rem;
+  }
+  .STORY-CONTENT{
+    display:flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:nowrap;
+    @media (max-width: 1080px){
+      flex-wrap:wrap
+    }
+    div{
+      padding:1rem 0;
+      width:100%;
+      h2{
+        width:80%;
+        margin:0 auto;
+        padding:20px 0;
+        text-align:left;
+        font-size:2rem;
+      }
+      p{
+        width:80%;
+        margin:0 auto;
+        text-align:left;
+        color:grey;
+        padding:0.5rem 0;
+      }
+    }
+  }
+  .rh5v-DefaultPlayer_video{
+    min-width:200px;
+    width:500px;
+    height:100%;
+  }
+  .rh5v-DefaultPlayer_component{
+    background:none;
+  }
+  .rh5v-DefaultPlayer_controls{
+    width: 500px;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+}

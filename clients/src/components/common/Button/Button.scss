@@ -1,0 +1,11 @@
+.BUTTON{
+  .ui.button{
+    min-width:150px;
+    @media (max-width: 768px){
+      width:110px;
+    }
+  }
+  .ui.button:hover{
+    background-color:lightgrey !important;
+  }
+}

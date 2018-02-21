@@ -1,0 +1,39 @@
+.FLEX-ROW {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .FLEX-ROW .JOB-LIST {
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    padding: 80px; }
+    .FLEX-ROW .JOB-LIST img {
+      margin-bottom: 10px;
+      width: 100px; }
+
+.title {
+  font-size: 40px;
+  padding-bottom: 1rem; }
+  @media (max-width: 768px) {
+    .title {
+      font-size: 25px;
+      text-align: center; } }
+
+.HOME-IMG {
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  padding: 80px; }
+  .HOME-IMG img {
+    margin-bottom: 10px;
+    width: 100px; }
+
+.BLOCK {
+  text-align: center;
+  padding: 40px; }
+
+.GREY-BLOCK {
+  text-align: center;
+  padding: 40px;
+  background-color: #F9F9F9; }

@@ -1,0 +1,41 @@
+.PRICEMODEL .ui.table {
+  overflow-x: overflow; }
+
+.PRICEMODEL .ui.table thead tr:first-child {
+  border-top: none; }
+
+.PRICEMODEL .ui.celled.definition.table thead:not(.full-width) th:first-child {
+  border-top: none; }
+
+.PRICEMODEL .LEFT-COLUMN {
+  display: flex;
+  width: 100% !important;
+  height: 70px;
+  justify-content: flex-start;
+  align-items: center; }
+
+.PRICEMODEL .table th, .PRICEMODEL .table td {
+  vertical-align: middle !important; }
+
+.PRICEMODEL .CUSTOM-CELL > div {
+  text-align: center; }
+  .PRICEMODEL .CUSTOM-CELL > div img {
+    width: 30px; }
+
+.PRICEMODEL .ui.definition.table thead:not(.full-width) th {
+  padding: 1rem;
+  text-align: center; }
+  .PRICEMODEL .ui.definition.table thead:not(.full-width) th h2 {
+    font-size: 1.5rem; }
+  .PRICEMODEL .ui.definition.table thead:not(.full-width) th p {
+    color: grey;
+    padding: 1rem 0;
+    width: 70%;
+    margin: 0 auto;
+    height: 100px; }
+  .PRICEMODEL .ui.definition.table thead:not(.full-width) th button {
+    margin-top: 1rem;
+    background-color: #5193DD;
+    color: white; }
+  .PRICEMODEL .ui.definition.table thead:not(.full-width) th button:hover {
+    background-color: lightgrey; }

@@ -1,0 +1,37 @@
+@import '../../Css/index.scss';
+
+.LOGIN{
+  @extend .FLEX-ROW-CENTER;
+  padding-top:50px;
+  .ui.card{
+    .ui.form .field>label{
+      text-align: left;
+    }
+    margin-top:50px;
+    width:500px;
+    .header{
+      padding:20px 0;
+      font-size:$sub-title !important;
+      text-align: center;
+    }
+    .description{
+      padding:20px 0;
+      width:80%;
+      margin:0 auto;
+      margin-top:20px !important;
+      input{
+        margin:10px 0;
+      }
+    }
+    .ui.facebook.button.facebook{
+      width:100%;
+      margin-top:12px;
+      a{
+        color:white;
+      }
+    }
+    @media (max-width: 525px){
+      width:300px;
+    }
+  }
+}

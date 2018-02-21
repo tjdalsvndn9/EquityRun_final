@@ -1,0 +1,33 @@
+.SELECTION{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:40px;
+  text-align: center;
+  h2{
+    font-size:40px;
+    padding-bottom:1rem;
+    @media (max-width: 768px){
+      font-size:25px;
+      text-align: center;
+    }
+  }
+  .FLEX-ROW{
+    padding-top:2rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .JOB-LIST{
+      cursor:pointer;
+      border:1px solid lightgrey;
+      padding:80px;
+      img{
+        margin-bottom:10px;
+        width:100px;
+      }
+    }
+  }
+}

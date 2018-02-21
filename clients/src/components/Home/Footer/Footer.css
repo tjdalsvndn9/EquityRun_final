@@ -1,0 +1,45 @@
+.FOOTER {
+  background: #7D7D7D; }
+  .FOOTER .FOOTER-ROW {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0; }
+  .FOOTER h3 {
+    font-size: 21px;
+    color: white;
+    padding: 1.3rem 0; }
+  .FOOTER ul, .FOOTER li {
+    list-style: none; }
+  .FOOTER ul {
+    margin: 0;
+    padding: 0; }
+  .FOOTER li {
+    padding: 0.6rem 0; }
+    .FOOTER li a {
+      color: white; }
+  .FOOTER .FOOTER-MARKETING {
+    padding: 2rem 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+    .FOOTER .FOOTER-MARKETING img {
+      width: 30px; }
+    .FOOTER .FOOTER-MARKETING div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 30%; }
+      .FOOTER .FOOTER-MARKETING div p {
+        margin: 0;
+        padding: 0; }
+    .FOOTER .FOOTER-MARKETING div:first-child {
+      padding-right: 20px; }
+    .FOOTER .FOOTER-MARKETING div:nth-child(2) {
+      padding-left: 20px; }

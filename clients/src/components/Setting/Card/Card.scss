@@ -1,0 +1,27 @@
+@import '../../Css/index.scss';
+
+.CARD{
+  width:100%;
+  .ui.card{
+    width:100%;
+  .header{
+    @extend .text-padding;
+  }
+  .description{
+    border-top:1px solid $primary-grey;
+    border-bottom:1px solid $primary-grey;
+    padding:10px;
+  }
+  .extra.content{
+    display: flex;
+    justify-content:flex-end;
+    .ui.button{
+      background-color:$primary-blue;
+      color:$primary-white;
+      &:hover{
+        background-color:$secondary-blue;
+      }
+    }
+  }
+  }
+}

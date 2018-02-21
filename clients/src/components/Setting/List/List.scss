@@ -1,0 +1,28 @@
+@import '../../Css/index.scss';
+
+.LIST{
+  @extend .FLEX-CENTER;
+  flex-grow:1;
+  & > div{
+    width:100%;
+  }
+  ul{
+    @extend .DEFAULT-LIST;
+    .LIST-TITLE{
+      font-size:$big-text;
+      padding:0.2rem 0;
+    }
+    .LIST-DETAIL{
+      font-size:$text;
+      padding: 0.8rem 0;
+      text-indent:$text-indent;
+    }
+    a{
+      @extend .NO-A-DECO;
+      &:hover{
+        color:$secondary-black;
+      }
+    }
+  }
+
+}
