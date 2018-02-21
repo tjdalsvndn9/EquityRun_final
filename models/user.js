@@ -21,7 +21,8 @@ const userSchema = new Schema({
   },
   profile:{
     name:{type:String,default:'user'},
-    picture:{type:String,default:''}
+    picture:{type:String,default:''},
+    role:{type:String}
   },
   courseTeach:[{
       course:{type:Schema.Types.ObjectId,ref:'Course'}

@@ -15,22 +15,39 @@ import {connect} from 'react-redux';
 import {authenticate} from '../../../actions/auth';
 import LOADER from '../../Util/Loader';
 
-class HEADER extends Component {
-  constructor(props) {
-  super(props);
-  this.state = {
-    isOpen: false
-  };
-}
 
-componentDidMount() {
-  this.props.authenticate();
-}
-toggle = () => {
-this.setState({
-  isOpen: !this.state.isOpen
-});
-}
+
+
+
+class HEADER extends Component {
+      constructor(props) {
+      super(props);
+      this.state = {
+        isOpen: false
+      };
+    }
+
+    componentDidMount() {
+      this.props.authenticate();
+    }
+    toggle = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+    }
+
+
+
+
+    roleDifference = () => {
+      if(this.props.auth.profile !== undefined){
+        if(this.props.auth.profile.role === 'entreprener'){
+          return  <Link to='/post-job'><NavLink>Post a Job</NavLink></Link>
+        }else{
+           return <NavLink href="/components/">Find Work</NavLink>
+        }
+      }
+    }
 
     authButton = () => {
       if(this.props.auth){
@@ -56,7 +73,7 @@ this.setState({
                  <Nav className="ml-auto" navbar>
 
                    <NavItem>
-                     <NavLink href="/components/">Find Work</NavLink>
+                    {this.roleDifference()}
                    </NavItem>
 
                    <NavItem>

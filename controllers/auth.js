@@ -4,8 +4,11 @@ const {saveToMailChimp} = require('../util/mailchimp');
 
 const signUp = async (req,res,next) => {
   try{
-    const {email,password} = req.body;
+    const {email,password,role} = req.body;
     const newUser = new User({
+      profile:{
+        role
+      },
       localLogin:{
         email,
         password

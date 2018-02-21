@@ -24,9 +24,11 @@ import SETTINGMEMBERSHIP from './components/Setting/Membership/Membership'
 import CONTACT from './components/Setting/Contact/Contact';
 import PROFILE from './components/Setting/Profile/Profile';
 import RELOGIN from './components/Auth/Relogin/Relogin';
+import POSTJOB from './components/Job/PostJob/PostJob';
 //HOC
 import REQUIREDAUTH from './components/HOC/RequiredAuth';
 import ASKAUTH from './components/HOC/askAuth';
+import REQUIREDAUTHANDROLE from './components/HOC/RequiredAuthAndRole';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
@@ -58,6 +60,7 @@ ReactDOM.render(
       <div>
         <HEADER/>
         <Switch>
+          <Route path='/post-job' component={REQUIREDAUTHANDROLE(POSTJOB)('entreprener')}/>
           <Route path='/setting/profile' component={REQUIREDAUTH(PROFILE)}/>
           <Route path='/authenticate' component={RELOGIN}/>
           <Route path='/setting/contact-info' component={reqAuthContact}/>

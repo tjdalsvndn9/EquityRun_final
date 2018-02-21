@@ -16,6 +16,18 @@
       font-size:$sub-title !important;
       text-align: center;
     }
+    .BUTTON-DESCRIPTION{
+      @extend .FLEX-ROW-SPACE-AROUND;
+      height:200px;
+      .ui.button{
+        min-width:150px;
+        background-color:$primary-blue;
+        color:white;
+        &:hover{
+          background-color:$secondary-blue;
+        }
+      }
+    }
     .description{
       padding:20px 0;
       width:80%;

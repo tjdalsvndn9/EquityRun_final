@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {submitUser} from '../../../actions/auth'
+import AUTHFORM from '../Common/Form';
 import '../Css/Auth.css'
 import './Login.css';
 import { Card, Button, Image,Form, Input,Icon } from 'semantic-ui-react'
@@ -44,32 +45,12 @@ export class LOGIN extends Component {
                          Log in and get to work
                        </Card.Header>
                        <Card.Description>
-                         <Form>
-                           <Form.Field>
-                             <label>Email Address</label>
-                             <Input
-                             fluid
-                             onChange={e => this.onChange(e,'email')}
-                             icon='user'
-                             value={email}
-                             type='text'
-                             placeholder='email address'
-                             iconPosition='left'
-                             className='email' />
-                           </Form.Field>
-                           <Form.Field>
-                             <label>Password</label>
-                             <Input
-                             fluid
-                             icon='lock'
-                             placeholder='password'
-                             type='password'
-                             onChange={e => this.onChange(e,'password')}
-                             iconPosition='left'
-                             value={password}
-                             className='password'/>
-                           </Form.Field>
-                         </Form>
+                          <AUTHFORM
+                          onChangeEmail={e => this.onChange(e,'email')}
+                          onChangePassword={e => this.onChange(e,'password')}
+                          password={password}
+                          email={email}
+                          />
                        </Card.Description>
                      </Card.Content>
                      <Card.Content extra>

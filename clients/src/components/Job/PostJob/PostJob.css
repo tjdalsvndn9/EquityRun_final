@@ -4,7 +4,7 @@
 .text-padding {
   padding: 15px 0; }
 
-.DEFAULT-PAGE-POSITION {
+.DEFAULT-PAGE-POSITION, .POSTJOB {
   height: 100vh;
   padding: 100px 50px 40px 50px;
   background: #F2F2F2; }
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center; }
 
-.FLEX-ROW-CENTER, .SIGNUP {
+.FLEX-ROW-CENTER {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
   justify-content: flex-start;
   align-items: flex-start; }
 
-.FLEX-ROW-SPACE-AROUND, .SIGNUP .ui.card .BUTTON-DESCRIPTION {
+.FLEX-ROW-SPACE-AROUND {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -64,34 +64,3 @@
 .NO-A-DECO {
   text-decoration: none;
   color: #222529; }
-
-.SIGNUP {
-  padding-top: 50px; }
-  .SIGNUP .ui.card {
-    margin-top: 50px;
-    width: 500px;
-    height: 400px; }
-    .SIGNUP .ui.card .ui.form .field > label {
-      text-align: left; }
-    .SIGNUP .ui.card .header {
-      padding: 20px 0;
-      font-size: 25px !important;
-      text-align: center; }
-    .SIGNUP .ui.card .BUTTON-DESCRIPTION {
-      height: 200px; }
-      .SIGNUP .ui.card .BUTTON-DESCRIPTION .ui.button {
-        min-width: 150px;
-        background-color: #5193DD;
-        color: white; }
-        .SIGNUP .ui.card .BUTTON-DESCRIPTION .ui.button:hover {
-          background-color: #256cbd; }
-    .SIGNUP .ui.card .description {
-      padding: 20px 0;
-      width: 80%;
-      margin: 0 auto;
-      margin-top: 20px !important; }
-      .SIGNUP .ui.card .description input {
-        margin: 10px 0; }
-    @media (max-width: 525px) {
-      .SIGNUP .ui.card {
-        width: 300px; } }

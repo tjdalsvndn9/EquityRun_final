@@ -11,14 +11,14 @@ export default (ComposedComponent) => {
         const {facebookId, localLogin:{email,password}} = this.props.auth;
         if(facebookId === ''){
           if(email === undefined && password === undefined){
-            this.props.navigation('/')
+            this.props.navigation('/login')
           }
         }
       }
 
       componentWillUpdate(nextProps, nextState) {
         if(!nextProps.auth){
-          this.props.navigation('/')
+          this.props.navigation('/login')
         }
       }
 
