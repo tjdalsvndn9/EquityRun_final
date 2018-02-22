@@ -9,7 +9,12 @@ $primary-black:#222529;
 
 $secondary-blue:darken($primary-blue,15%);
 $secondary-grey:lighten($primary-grey,15%);
+$secondary-white:darken($primary-white,10%);
 $secondary-black:lighten($primary-black, 35%);
+
+
+
+$light-black:lighten($primary-black, 60%);
 
 //font
 $title:40px;
@@ -43,11 +48,23 @@ $phone-screen:575px;
   background:#F2F2F2;
 }
 
+.DEFAULT-PAGE-POSITION-PERCENTAGE{
+  height: 100%;
+  padding:100px 50px 40px 50px;
+  background:#F2F2F2;
+}
+
 
 .FLEX-CENTER{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.FLEX-ROW-ONLY-ALIGN-CENTER{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .FLEX-ROW-CENTER{
@@ -71,6 +88,7 @@ $phone-screen:575px;
   justify-content: center;
   align-items: center;
 }
+
 .FLEX-COLUMN-START{
   display:flex;
   flex-direction: column;
@@ -91,6 +109,13 @@ $phone-screen:575px;
   align-items: flex-start;
 }
 
+.FLEX-ROW-END-SPACE-AROUND{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: flex-end;
+}
+
 
 //padding
 .padding-50{
@@ -109,6 +134,16 @@ $phone-screen:575px;
 .NO-A-DECO{
   text-decoration: none;
   color:$primary-black;
+}
+
+//Button
+.BUTTON{
+  background-color:$primary-blue;
+  color:white;
+  cursor:pointer;
+  &:hover{
+    background-color:$secondary-blue;
+  }
 }
 
 

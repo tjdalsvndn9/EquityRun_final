@@ -81,7 +81,7 @@ class HEADER extends Component {
                    </NavItem>
 
                    <NavItem>
-                     <NavLink href="/components/">Messages</NavLink>
+                     <Link to='/message'><NavLink>Messages</NavLink></Link>
                    </NavItem>
 
                      {this.authButton()}

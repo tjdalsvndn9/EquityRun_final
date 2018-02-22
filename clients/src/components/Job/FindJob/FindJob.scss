@@ -1,0 +1,28 @@
+@import '../../Css/index.scss';
+
+
+.FINDJOB{
+  @extend .DEFAULT-PAGE-POSITION;
+  .ui.form{
+    padding-bottom:1.5rem;
+  }
+  .ui.card{
+    cursor:pointer;
+    &:hover{
+      background-color:$secondary-white;
+    }
+  }
+  .description{
+    min-height: 150px !important;
+    flex-direction: column !important;
+    justify-content:center !important;
+    align-items: flex-start !important;
+    padding:10px 20px !important;
+    h3,p{
+      padding:5px 0;
+    }
+    .EQUITY{
+      color:$primary-blue;
+    }
+  }
+}

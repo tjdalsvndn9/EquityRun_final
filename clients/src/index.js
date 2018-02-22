@@ -25,6 +25,8 @@ import CONTACT from './components/Setting/Contact/Contact';
 import PROFILE from './components/Setting/Profile/Profile';
 import RELOGIN from './components/Auth/Relogin/Relogin';
 import POSTJOB from './components/Job/PostJob/PostJob';
+import FINDJOB from './components/Job/FindJob/FindJob';
+import MESSAGE from './components/Message/Message';
 //HOC
 import REQUIREDAUTH from './components/HOC/RequiredAuth';
 import ASKAUTH from './components/HOC/askAuth';
@@ -60,6 +62,8 @@ ReactDOM.render(
       <div>
         <HEADER/>
         <Switch>
+          <Route path='/message' component={MESSAGE}/>
+          <Route path='/find-job' component={REQUIREDAUTHANDROLE(FINDJOB)('freelancer')}/>
           <Route path='/post-job' component={REQUIREDAUTHANDROLE(POSTJOB)('entreprener')}/>
           <Route path='/setting/profile' component={REQUIREDAUTH(PROFILE)}/>
           <Route path='/authenticate' component={RELOGIN}/>
