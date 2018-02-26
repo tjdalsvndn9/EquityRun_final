@@ -23,6 +23,12 @@ $big-text:20px;
 $text:15px;
 $text-indent:20px;
 
+//job detail font
+$job-title:22px;
+$job-subtitle:20px;
+
+
+
 //font-padding
 .sub-title-padidng{
   padding-bottom:15px;
@@ -30,6 +36,12 @@ $text-indent:20px;
 
 .text-padding{
   padding:15px 0;
+}
+
+
+//Chart Padding
+.chart-padding{
+  padding:1rem 0;
 }
 
 
@@ -78,6 +90,13 @@ $phone-screen:575px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: row;
+}
+
+.FLEX-ROW-JUST-START{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: row;
 }
 

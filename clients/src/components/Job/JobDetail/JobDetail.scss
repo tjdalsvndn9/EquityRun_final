@@ -1,0 +1,33 @@
+@import '../../Css/index.scss';
+
+
+.JOBDETAIL{
+  @extend .DEFAULT-PAGE-POSITION;
+  .job-container{
+    width:90%;
+  }
+  .job-company-container{
+    @extend .FLEX-ROW-JUST-START;
+    padding-bottom:1.5rem;
+    .job-company{
+      font-size:$job-subtitle;
+    }
+    img{
+      width:150px;
+      margin-right:10px;
+    }
+  }
+  .job-title{
+    font-size:$job-title;
+  }
+  .job-time{
+    padding:0.5rem 0;
+  }
+  .BGCARD.ui.card.description{
+    height:100%;
+  }
+  .ui.button{
+    margin-top:1rem;
+    @extend .BUTTON;
+  }
+}

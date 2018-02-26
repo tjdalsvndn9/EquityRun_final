@@ -3,11 +3,15 @@
 
 .FINDJOB{
   @extend .DEFAULT-PAGE-POSITION;
+  .loader-container{
+    padding:1em 0;
+  }
   .ui.form{
     padding-bottom:1.5rem;
   }
   .ui.card{
     cursor:pointer;
+    margin:10px 0;
     &:hover{
       background-color:$secondary-white;
     }

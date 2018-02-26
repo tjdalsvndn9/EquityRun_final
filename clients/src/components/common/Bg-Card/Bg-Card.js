@@ -6,7 +6,7 @@ import './Bg-Card.css';
 class BGCARD extends Component {
     render() {
         return (
-            <div className="BGCARD">
+            <div className="BGCARD" onClick={this.props.onClick}>
             <Card style={this.props.cardStyle}>
               <Card.Content>
                 <Card.Description>

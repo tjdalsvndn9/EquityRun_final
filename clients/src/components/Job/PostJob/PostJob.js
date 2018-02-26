@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, Form, Select} from 'semantic-ui-react'
-import ReactTags from 'react-tag-autocomplete';
-import './PostJob.css';
+import {Button, Form} from 'semantic-ui-react'
+import {connect} from 'react-redux';
+import {fetchAction,postAJob} from '../../../actions/postJob';
+import { reduxForm ,Field } from 'redux-form'
 import {maybeisNumberValid} from '../../Util/UtilFunction';
+import LOADER from '../../Util/Loader';
+import RADIO from '../../common/Redux-Form/Radio/Radio'
+import INPUT from '../../common/Redux-Form/Input/Input';
+import TEXTAREA from '../../common/Redux-Form/TextArea/TextArea';
+import SELECT from '../../common/Redux-Form/Select/Select'
+import TAG from '../../common/Redux-Form/Tag/Tag';
+import './PostJob.css';
+
+
 
 const options = [
   {
@@ -32,19 +42,28 @@ class POSTJOB extends Component {
     description:'',
     deadline:null,
     tags: [],
-    suggestions: [
-        { name: "Bananas" },
-        {  name: "Mangos" },
-        { name: "Lemons" },
-        { name: "Apricots" }
-    ]
+    suggestions: []
   }
+
+   async componentDidMount(){
+    const url = 'https://raw.githubusercontent.com/scienceai/list-of-programming-languages/master/data/data.json'
+    this.props.fetchAction(url)
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.suggestions !== this.state.suggestions){
+      this.setState({suggestions:nextProps.suggestions})
+    }
+  }
+
+
+
   handleChange = (e,{value}) =>   this.setState({category:value});
 
   handleChangeInput = (e,text) =>   this.setState({[text]:e.target.value});
   handleChangeSelect = (e,{value}) => this.setState({deadline:value});
 
-  onSubmit = () => {
+  onSubmit = ({title}) => {
     const {equity} = this.state;
     const numberedEquity = Number(equity);
     const newState = Object.keys(this.state)
@@ -54,7 +73,7 @@ class POSTJOB extends Component {
       return acc;
     },{});
     const verifiedEquity = maybeisNumberValid(numberedEquity)[0] === numberedEquity ? Number(numberedEquity.toFixed(2)) : 0;
-    console.log({...newState, equity:verifiedEquity })
+    this.props.postAJob({...newState, equity:verifiedEquity })
   }
 
   handleDelete =  (i) =>  {
@@ -68,54 +87,80 @@ class POSTJOB extends Component {
     this.setState({ tags })
   }
 
+
+
   render() {
-    return (<div className="POSTJOB">
-      <Form>
-        <Form.Group inline="inline">
-          <label>Category</label>
-          <Form.Radio label='Development' value='dev' checked={this.state.category === 'dev'} onChange={this.handleChange}/>
-          <Form.Radio label='Design' value='des' checked={this.state.category === 'des'} onChange={this.handleChange}/>
-          <Form.Radio label='Marketing' value='mar' checked={this.state.category === 'mar'} onChange={this.handleChange}/>
-        </Form.Group>
+    return (
+      <LOADER loaderReason={this.props.loading}>
+      <div className="POSTJOB">
+      <Form onSubmit={this.onSubmit}>
+        <RADIO
+        label='Category'
+        value1='dev'
+        value2='des'
+        value3='mar'
+        state={this.state.category}
+        onChange={this.handleChange}
+        />
+        <Field
+        name="title"
+        component={INPUT}
+        label='title'
+        placeholder='Looking for a Node js develoepr'
+        type="text"/>
 
-        <Form.Field>
-          <label>Job Title</label>
-          <input placeholder='Looking for a Node js developer' onChange={e => this.handleChangeInput(e,'title')}/>
-        </Form.Field>
+        <Field
+        name="description"
+        label='Job Description'
+        placeholder='Tell us more about the job and expectation'
+        component={TEXTAREA}
+        type="text"/>
 
-        <Form.Field>
-          <Form.TextArea
-          label='Job Description'
-          placeholder='Tell us more about the job and expectation'
-          onChange={e => this.handleChangeInput(e,'description')}
-          />
-        </Form.Field>
+        <SELECT
+          label='Deadline'
+          options={options}
+          onChange={this.handleChangeSelect}
+          placeholder='Less Than'
+        />
 
-        <Form.Field
-        control={Select}
-        label='Deadline'
-        options={options}
-        onChange={this.handleChangeSelect}
-        placeholder='Less than'/>
-          <Form.Field>
-            <label>Equity (%)</label>
-            <input
-            placeholder='1.5'
-            onChange={e => this.handleChangeInput(e,'equity')}
-            />
-          </Form.Field>
-        <Form.Field>
-          <label>Tag (maximum 3)</label>
-        <ReactTags
-       tags={this.state.tags}
-       suggestions={this.state.suggestions}
-       handleDelete={this.handleDelete.bind(this)}
-       handleAddition={this.handleAddition.bind(this)} />
-      </Form.Field>
-        <Button type='submit' onClick={this.onSubmit}>Submit</Button>
+        <Field
+        name="equity"
+        label='Equity (%)'
+        placeholder='1.5'
+        component={INPUT}
+        type="text"/>
+        <TAG
+        label="Tag (maximum 3)"
+        tags={this.state.tags}
+        suggestions={this.state.suggestions}
+        handleDelete={this.handleDelete}
+        handleAddition={this.handleAddition}
+        />
+        <Button type='submit'>Submit</Button>
       </Form>
-    </div>);
+    </div>
+    </LOADER>
+  );
   }
 }
 
-export default POSTJOB;
+
+const validate = values => {
+  const {title} = values;
+  const errors = {};
+  if(!title || title.trim() === ''){
+    errors.title = 'Enter a title';
+  }
+  return errors;
+}
+
+function mapStateToProps(tags){
+  const {loading,suggestions} = tags.tags
+  return {loading,suggestions}
+}
+
+
+export default reduxForm({
+  form:'PostJobForm',
+  validate
+})(connect(mapStateToProps,{fetchAction,postAJob})(POSTJOB));

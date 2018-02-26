@@ -1,0 +1,26 @@
+@import '../../Css/index.scss';
+
+.ACCORDIAN{
+  .accordion__item{
+    &:focus{
+      outline:none;
+    }
+  }
+  .accordion{
+    &:focus{
+      outline:none;
+    }
+  }
+  #accordion__title-0{
+    padding:1rem 0;
+    &:focus{
+      outline:none;
+    }
+  }
+  .arrow.down.icon{
+    cursor:pointer;
+    &:hover{
+      color:$primary-blue;
+    }
+  }
+}

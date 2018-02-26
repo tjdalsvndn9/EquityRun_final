@@ -44,7 +44,7 @@ class HEADER extends Component {
         if(this.props.auth.profile.role === 'entreprener'){
           return  <Link to='/post-job'><NavLink>Post a Job</NavLink></Link>
         }else{
-           return <NavLink href="/components/">Find Work</NavLink>
+           return <NavLink href="/find-job">Find Work</NavLink>
         }
       }
     }
@@ -77,7 +77,7 @@ class HEADER extends Component {
                    </NavItem>
 
                    <NavItem>
-                     <NavLink href="/components/">Report</NavLink>
+                     <Link to='/report'><NavLink>Report</NavLink></Link>
                    </NavItem>
 
                    <NavItem>

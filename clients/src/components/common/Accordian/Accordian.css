@@ -1,0 +1,114 @@
+.sub-title-padidng {
+  padding-bottom: 15px; }
+
+.text-padding {
+  padding: 15px 0; }
+
+.chart-padding {
+  padding: 1rem 0; }
+
+.DEFAULT-PAGE-POSITION {
+  height: 100vh;
+  padding: 100px 50px 40px 50px;
+  background: #F2F2F2; }
+
+.DEFAULT-PAGE-POSITION-PERCENTAGE {
+  height: 100%;
+  padding: 100px 50px 40px 50px;
+  background: #F2F2F2; }
+
+.FLEX-CENTER {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.FLEX-ROW-ONLY-ALIGN-CENTER {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.FLEX-ROW-CENTER {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; }
+
+.FLEX-ROW-START {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row; }
+
+.FLEX-ROW-JUST-START {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row; }
+
+.FLEX-COLUMN-CENTER {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.FLEX-COLUMN-START {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
+.FLEX-ROW-SPACE-AROUND {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.FLEX-ROW-START-SPACE-AROUND {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start; }
+
+.FLEX-ROW-END-SPACE-AROUND {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end; }
+
+.padding-50 {
+  padding: 50px 0; }
+
+.padding-10 {
+  padding: 10px 0; }
+
+.DEFAULT-LIST {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.NO-A-DECO {
+  text-decoration: none;
+  color: #222529; }
+
+.BUTTON {
+  background-color: #5193DD;
+  color: white;
+  cursor: pointer; }
+  .BUTTON:hover {
+    background-color: #256cbd; }
+
+.ACCORDIAN .accordion__item:focus {
+  outline: none; }
+
+.ACCORDIAN .accordion:focus {
+  outline: none; }
+
+.ACCORDIAN #accordion__title-0 {
+  padding: 1rem 0; }
+  .ACCORDIAN #accordion__title-0:focus {
+    outline: none; }
+
+.ACCORDIAN .arrow.down.icon {
+  cursor: pointer; }
+  .ACCORDIAN .arrow.down.icon:hover {
+    color: #5193DD; }

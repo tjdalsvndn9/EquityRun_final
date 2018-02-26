@@ -27,10 +27,14 @@ import RELOGIN from './components/Auth/Relogin/Relogin';
 import POSTJOB from './components/Job/PostJob/PostJob';
 import FINDJOB from './components/Job/FindJob/FindJob';
 import MESSAGE from './components/Message/Message';
+import JOBDETAIL from './components/Job/JobDetail/JobDetail';
+import ENTREPRENEURREPORT from './components/Report/Entrepreneur_Report/Entrepreneur_Report';
+
 //HOC
 import REQUIREDAUTH from './components/HOC/RequiredAuth';
 import ASKAUTH from './components/HOC/askAuth';
 import REQUIREDAUTHANDROLE from './components/HOC/RequiredAuthAndRole';
+import DEFFERENCIATEROLE from './components/HOC/DifferenciateRole';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
@@ -52,7 +56,8 @@ const store = createStore(
 )
 
 
-
+/// this is the right thing
+//REQUIREDAUTHANDROLE(FINDJOB)('freelancer')
 
 
 ReactDOM.render(
@@ -62,7 +67,9 @@ ReactDOM.render(
       <div>
         <HEADER/>
         <Switch>
-          <Route path='/message' component={MESSAGE}/>
+          <Route path='/report' component={REQUIREDAUTHANDROLE(ENTREPRENEURREPORT)('entreprener')}/>
+          <Route path='/job-detail/:id' component={REQUIREDAUTHANDROLE(JOBDETAIL)('freelancer')}/>
+          <Route path='/message/:roomId' component={MESSAGE}/>
           <Route path='/find-job' component={REQUIREDAUTHANDROLE(FINDJOB)('freelancer')}/>
           <Route path='/post-job' component={REQUIREDAUTHANDROLE(POSTJOB)('entreprener')}/>
           <Route path='/setting/profile' component={REQUIREDAUTH(PROFILE)}/>

@@ -1,0 +1,13 @@
+@import '../../Css/index.scss';
+
+.PROGRESSBAR{
+  h4{
+    padding:5px 0;
+  }
+  .progress{
+    height:2rem;
+    .progress-bar{
+      background-color:$primary-blue;
+    }
+  }
+}

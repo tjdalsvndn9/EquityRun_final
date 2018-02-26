@@ -4,12 +4,15 @@
 .text-padding {
   padding: 15px 0; }
 
-.DEFAULT-PAGE-POSITION {
+.chart-padding {
+  padding: 1rem 0; }
+
+.DEFAULT-PAGE-POSITION, .POSTJOB {
   height: 100vh;
   padding: 100px 50px 40px 50px;
   background: #F2F2F2; }
 
-.DEFAULT-PAGE-POSITION-PERCENTAGE, .POSTJOB {
+.DEFAULT-PAGE-POSITION-PERCENTAGE {
   height: 100%;
   padding: 100px 50px 40px 50px;
   background: #F2F2F2; }
@@ -19,7 +22,7 @@
   align-items: center;
   justify-content: center; }
 
-.FLEX-ROW-ONLY-ALIGN-CENTER, .POSTJOB .react-tags {
+.FLEX-ROW-ONLY-ALIGN-CENTER {
   display: flex;
   flex-direction: row;
   align-items: center; }
@@ -34,6 +37,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: row; }
+
+.FLEX-ROW-JUST-START {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: row; }
 
 .FLEX-COLUMN-CENTER {
@@ -91,113 +100,3 @@
 .POSTJOB .ui.button {
   min-width: 200px;
   margin-top: 1rem; }
-
-.POSTJOB .react-tags {
-  position: relative;
-  padding: 6px 0 0 6px;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  /* shared font styles */
-  font-size: 1em;
-  line-height: 1.2;
-  /* clicking anywhere will focus the input */
-  cursor: text;
-  background: white;
-  border-radius: .28571429rem;
-  height: 45px; }
-  .POSTJOB .react-tags input {
-    border: none; }
-
-.POSTJOB .react-tags.is-focused {
-  border-color: #B1B1B1; }
-
-.POSTJOB .react-tags__selected {
-  display: inline; }
-
-.POSTJOB .react-tags__selected-tag {
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 0 6px 6px 0;
-  padding: 6px 8px;
-  border: 1px solid #D1D1D1;
-  border-radius: 2px;
-  background: #F1F1F1;
-  /* match the font styles */
-  font-size: inherit;
-  line-height: inherit; }
-
-.POSTJOB .react-tags__selected-tag:after {
-  content: '\2715';
-  color: #AAA;
-  margin-left: 8px; }
-
-.POSTJOB .react-tags__selected-tag:hover,
-.POSTJOB .react-tags__selected-tag:focus {
-  border-color: #B1B1B1; }
-
-.POSTJOB .react-tags__search {
-  display: inline-block;
-  /* match tag layout */
-  padding: 7px 2px;
-  margin-bottom: 6px;
-  /* prevent autoresize overflowing the container */
-  max-width: 100%; }
-
-@media screen and (min-width: 30em) {
-  .POSTJOB .react-tags__search {
-    /* this will become the offsetParent for suggestions */
-    position: relative; } }
-
-.POSTJOB .react-tags__search input {
-  /* prevent autoresize overflowing the container */
-  width: 150px !important;
-  /* remove styles and layout from this element */
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: none;
-  border: none !important;
-  /* match the font styles */
-  font-size: inherit;
-  line-height: inherit; }
-
-.POSTJOB .react-tags__search input::-ms-clear {
-  display: none; }
-
-.POSTJOB .react-tags__suggestions {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%; }
-
-@media screen and (min-width: 30em) {
-  .POSTJOB .react-tags__suggestions {
-    width: 240px; } }
-
-.POSTJOB .react-tags__suggestions ul {
-  margin: 4px -1px;
-  padding: 0;
-  list-style: none;
-  background: white;
-  border: 1px solid #D1D1D1;
-  border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); }
-
-.POSTJOB .react-tags__suggestions li {
-  border-bottom: 1px solid #ddd;
-  padding: 6px 8px; }
-
-.POSTJOB .react-tags__suggestions li mark {
-  text-decoration: underline;
-  background: none;
-  font-weight: 600; }
-
-.POSTJOB .react-tags__suggestions li:hover {
-  cursor: pointer;
-  background: #eee; }
-
-.POSTJOB .react-tags__suggestions li.is-active {
-  background: #b7cfe0; }
-
-.POSTJOB .react-tags__suggestions li.is-disabled {
-  opacity: 0.5;
-  cursor: auto; }

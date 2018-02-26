@@ -1,9 +1,57 @@
 import { combineEpics } from 'redux-observable';
 import {Observable} from 'rxjs'
+import {FETCH_ACTION,FUFILLED_ACTION,FIND_JOB} from '../actions/type';
+import {fufilledFetchAction} from '../actions/postJob';
+import {fufilledFetchActionFindJob,findError,loadingAction} from '../actions/findJob';
+import {ajaxCall} from '../components/Util/UtilFunction';
 // import {CLICK,CLEAR,FETCH_USER,FETCH_HACKER_NEWS,SEARCH_BEER,CANCEL_SEARCH_BEER} from '../actions/type';
 // import {clearClick,fetchUserFufilled,fetchHackerNewsFufilled,searchBeerFufilled,serchBeerError} from '../actions';
 //
 //
+
+
+const fetchTagEpic = action$ => {
+  return action$.ofType(FETCH_ACTION)
+        .switchMap(({payload}) => Observable.fromPromise(ajaxCall(payload)))
+        .map(value => value.itemListElement)
+        .map(value => value.reduce((acc,val) => {
+          val = val.item.name;
+          acc.push({name:val});
+          return acc;
+        },[]))
+        .map(lists => fufilledFetchAction(lists))
+}
+
+
+const fetchJobEpic = action$ => {
+  //temporary till I create my own job api
+  const createJobAPIWithLocation = (lat,long,output) => {
+    //fetch from github job api
+    return `https://jobs.github.com/positions.json?lat=${lat}&long=${long}&description=${output}`
+  }
+  //fetch from github job api
+  const createJobAPI = (output) => `https://jobs.github.com/positions.json?description=${output}`;
+
+  return action$.ofType(FIND_JOB)
+  .debounceTime(500)
+  .filter(({payload}) => payload.value !== '')
+  .switchMap(({payload}) => {
+    if(payload.location !== undefined){
+      const {latitude,longitude} = payload.location
+      return Observable.fromPromise(ajaxCall(createJobAPIWithLocation(latitude,longitude, payload.value)))
+
+    }
+    return Observable.fromPromise(ajaxCall(createJobAPI(payload.value)))
+
+  })
+  .map(lists => fufilledFetchActionFindJob(lists))
+  .catch(err => Observable.of(findError()))
+}
+
+
+
+
+
 // const ajaxUser = async () => {
 //   let response = await fetch('https://randomuser.me/api/');
 //   let payload = await response.json();
@@ -69,6 +117,8 @@ import {Observable} from 'rxjs'
 
 
 const rootEpic = combineEpics(
+  fetchTagEpic,
+  fetchJobEpic
 );
 
 

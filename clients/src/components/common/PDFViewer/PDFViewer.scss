@@ -1,0 +1,10 @@
+@import '../../Css/index.scss';
+
+.PDFVIEWER{
+  .ReactPDF__Page{
+    @extend .FLEX-CENTER;
+    &:hover{
+      cursor: zoom-in;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import '../../Css/index.scss';
+
+
+.ENTREPRENEURREPORT{
+ @extend .DEFAULT-PAGE-POSITION-PERCENTAGE;
+ .container-inner{
+  width:80%; 
+ }
+}

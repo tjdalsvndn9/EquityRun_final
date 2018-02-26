@@ -4,6 +4,9 @@
 .text-padding, .CARD .ui.card .header {
   padding: 15px 0; }
 
+.chart-padding {
+  padding: 1rem 0; }
+
 .DEFAULT-PAGE-POSITION {
   height: 100vh;
   padding: 100px 50px 40px 50px;
@@ -34,6 +37,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: row; }
+
+.FLEX-ROW-JUST-START {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: row; }
 
 .FLEX-COLUMN-CENTER {

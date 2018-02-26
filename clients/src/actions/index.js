@@ -1,4 +1,4 @@
-import {push} from 'react-router-redux';
+import {push,goBack} from 'react-router-redux';
 
 
 
@@ -7,9 +7,11 @@ export const navigation = text => dispatch => {
 }
 
 
-export const advancedNavigation = (text,nextRoute) => dispatch => {
+export const advancedNavigation = (pathname,nextRoute) => dispatch => {
   dispatch(push({
-    pathname:text,
+    pathname,
     state:{nextRoute}
   }))
 }
+
+export const navigationBack = () => dispatch => dispatch(goBack());
