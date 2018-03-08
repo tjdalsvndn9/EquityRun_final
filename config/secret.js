@@ -15,7 +15,15 @@ const SALT = 10;
 //MailChimp
 const MAIL_CHIMP_API_KEY = '71ea9541ef73552867fb5a03ca3f1669-us17';
 
+//Sendgrid
+//account equityrun
+//password Rabun
+const SENDGRID_KEY = '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'
 
+
+//Twilio
+const TWILIO_SID = 'AC6a30248efb9892b8a1f1dea3fad2765f';
+const TWILIO_TOKEN = 'e0bcebd93a6c01b89f6b76f723081618';
 
 module.exports = {
   DATABASE,
@@ -25,5 +33,8 @@ module.exports = {
   FACEBOOK_CALLBACK_URL,
   SECRET_KEY,
   SALT,
-  MAIL_CHIMP_API_KEY
+  MAIL_CHIMP_API_KEY,
+  SENDGRID_KEY,
+  TWILIO_SID,
+  TWILIO_TOKEN
 }

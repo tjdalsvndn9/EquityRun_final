@@ -2,7 +2,7 @@ const router = require('express').Router();
 const passport = require('passport');
 const passportConfig = require('../config/passport');
 const localPassportConfig = require('../config/localPassport');
-const {signUp} = require('../controllers/auth');
+const {signUp,twoFactorEmail,twoFactorPhone,twoFactorPhoneCall} = require('../controllers/auth');
 
 
 router.get('/auth/facebook',
@@ -34,5 +34,8 @@ router.post('/api/login',
 
 router.post('/api/signup', signUp)
 
+router.post('/api/authenticate/email', twoFactorEmail)
+router.post('/api/authenticate/phone', twoFactorPhone)
+router.post('/api/authenticate/phone-call',twoFactorPhoneCall)
 
 module.exports = router;
