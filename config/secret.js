@@ -1,4 +1,4 @@
-const DATABASE  = 'mongodb://tjdalsvndn9:cj7600tu@ds239638.mlab.com:39638/udemy-clone';
+
 const PORT = 5000;
 const SECRET_KEY = 'dsahgasdtrewasdgsdg'
 
@@ -26,7 +26,6 @@ const TWILIO_SID = 'AC6a30248efb9892b8a1f1dea3fad2765f';
 const TWILIO_TOKEN = 'e0bcebd93a6c01b89f6b76f723081618';
 
 module.exports = {
-  DATABASE,
   PORT,
   FACEBOOK_CLIENT_ID,
   FACEBOOK_CLIENT_SECRET,
