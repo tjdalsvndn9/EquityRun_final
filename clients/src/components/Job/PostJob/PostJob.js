@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Button, Form} from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import {fetchAction,postAJob} from '../../../actions/postJob';
+import {navigation} from '../../../actions'
 import { reduxForm ,Field } from 'redux-form'
 import {maybeisNumberValid} from '../../Util/UtilFunction';
 import LOADER from '../../Util/Loader';
@@ -42,7 +43,8 @@ class POSTJOB extends Component {
     description:'',
     deadline:null,
     tags: [],
-    suggestions: []
+    suggestions: [],
+    equity:null
   }
 
    async componentDidMount(){
@@ -60,10 +62,11 @@ class POSTJOB extends Component {
 
   handleChange = (e,{value}) =>   this.setState({category:value});
 
-  handleChangeInput = (e,text) =>   this.setState({[text]:e.target.value});
+  handleChangeInput = (e,text) =>   this.setState({[text]:e.target.value})
+
   handleChangeSelect = (e,{value}) => this.setState({deadline:value});
 
-  onSubmit = ({title}) => {
+  onSubmit = async() => {
     const {equity} = this.state;
     const numberedEquity = Number(equity);
     const newState = Object.keys(this.state)
@@ -73,7 +76,8 @@ class POSTJOB extends Component {
       return acc;
     },{});
     const verifiedEquity = maybeisNumberValid(numberedEquity)[0] === numberedEquity ? Number(numberedEquity.toFixed(2)) : 0;
-    this.props.postAJob({...newState, equity:verifiedEquity })
+    await this.props.postAJob({...newState, equity:verifiedEquity, userId:this.props._id })
+    this.props.navigation('setting/billing')
   }
 
   handleDelete =  (i) =>  {
@@ -105,15 +109,19 @@ class POSTJOB extends Component {
         <Field
         name="title"
         component={INPUT}
-        label='title'
+        value={this.state.title}
+        onChange={e => this.handleChangeInput(e,'title')}
+        label='Title'
         placeholder='Looking for a Node js develoepr'
         type="text"/>
 
         <Field
         name="description"
         label='Job Description'
+        value={this.state.description}
+        onChange={e => this.handleChangeInput(e,'description')}
         placeholder='Tell us more about the job and expectation'
-        component={TEXTAREA}
+        component={INPUT}
         type="text"/>
 
         <SELECT
@@ -128,6 +136,8 @@ class POSTJOB extends Component {
         label='Equity (%)'
         placeholder='1.5'
         component={INPUT}
+        value={this.state.equity}
+        onChange={e => this.handleChangeInput(e,'equity')}
         type="text"/>
         <TAG
         label="Tag (maximum 3)"
@@ -155,12 +165,13 @@ const validate = values => {
 }
 
 function mapStateToProps(tags){
-  const {loading,suggestions} = tags.tags
-  return {loading,suggestions}
+  const {loading,suggestions} = tags.tags;
+  const {_id} = tags.auth;
+  return {loading,suggestions,_id}
 }
 
 
 export default reduxForm({
   form:'PostJobForm',
   validate
-})(connect(mapStateToProps,{fetchAction,postAJob})(POSTJOB));
+})(connect(mapStateToProps,{navigation,fetchAction,postAJob})(POSTJOB));

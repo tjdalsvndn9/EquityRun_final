@@ -22,5 +22,9 @@ export const fufilledFetchAction = lists => {
 
 
 export const postAJob = jobObj => async(dispatch) => {
-  console.log(jobObj)
+  await axios({
+    method:'post',
+    url:'/job',
+    data:jobObj
+  })
 }

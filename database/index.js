@@ -4,3 +4,7 @@ const {DATABASE}  = require('../config/secret');
 mongoose.connect(DATABASE)
 .then(() => console.log('mongoose connected'))
 .catch(e => console.log(e));
+
+
+require('../models/user');
+require('../models/job');

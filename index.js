@@ -34,6 +34,7 @@ app.use(passport.session());
 //routes
 app.use(require('./routes/main'));
 app.use(require('./routes/user'));
+app.use('/job',require('./routes/job'));
 
 //error handler
 app.use((err,req,res,next) => {

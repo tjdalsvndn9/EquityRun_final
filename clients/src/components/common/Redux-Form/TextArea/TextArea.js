@@ -1,16 +1,10 @@
 import React from 'react';
-import {Form} from 'semantic-ui-react'
+import {Form,TextArea} from 'semantic-ui-react'
 
 
-const TEXTAREA = ({label,placeholder,onChange}) => {
+const TEXTAREA = ({label,placeholder,textarea,onChange}) => {
   return(
-    <Form.Field>
-      <Form.TextArea
-      label={label}
-      placeholder={placeholder}
-      onChange={onChange}
-      />
-    </Form.Field>
+     <Form.Field  control={TextArea} label={label} placeholder={placeholder} onChange={onChange} />
   );
 }
 

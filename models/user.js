@@ -29,7 +29,12 @@ const userSchema = new Schema({
     }],
   courseTaken:[{
       course:{type:Schema.Types.ObjectId,ref:'Course'}
-    }]
+    }],
+    postJob:[
+      {
+        job:{type:Schema.Types.ObjectId, ref:"Job"}
+      }
+    ]
 },{timestamps: { createdAt: 'created_at' }});
 
 userSchema.pre('save', async function(next) {
