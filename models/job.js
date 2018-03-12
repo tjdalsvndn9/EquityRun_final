@@ -62,6 +62,16 @@ jobSchema.statics.delete = async function(id){
     return err;
   }
 }
+jobSchema.statics.find = async function(id){
+  const job = mongoose.model('Job');
+  try{
+    const featuredJob = await job.findById(id);
+    return await featuredJob;
+  }
+  catch(err){
+    return err;
+  }
+}
 
 
 const job = mongoose.model('Job',jobSchema);

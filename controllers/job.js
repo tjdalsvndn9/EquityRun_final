@@ -14,6 +14,14 @@ const addJob = async (req,res,next) => {
   }
 }
 
+const findJob = async(req,res,next) => {
+  try{
+    const featuredJob = await Job.find(req.params.id);
+    res.send(featuredJob)
+  }
+  catch(err){next(err)}
+}
+
 
 
 
@@ -21,5 +29,6 @@ const addJob = async (req,res,next) => {
 
 
 module.exports = {
-  addJob
+  addJob,
+  findJob
 }

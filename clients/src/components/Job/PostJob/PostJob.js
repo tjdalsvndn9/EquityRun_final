@@ -115,14 +115,13 @@ class POSTJOB extends Component {
         placeholder='Looking for a Node js develoepr'
         type="text"/>
 
-        <Field
-        name="description"
+        <TEXTAREA
         label='Job Description'
         value={this.state.description}
         onChange={e => this.handleChangeInput(e,'description')}
         placeholder='Tell us more about the job and expectation'
-        component={INPUT}
-        type="text"/>
+        />
+
 
         <SELECT
           label='Deadline'
