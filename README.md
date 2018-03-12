@@ -1,5 +1,14 @@
-## THIS IS FOR UX-MEN TEAM
+## HOW TO RUN THIS PROJECT
 
+git clone
+
+npm i in root
+
+cd client
+
+npm i
+
+npm run dev in root
 
 
 ## TECH STACK
